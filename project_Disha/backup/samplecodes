@@ -1,0 +1,34 @@
+kmeans = KMeans(n_clusters = 10, init ='k-means++')
+kmeans.fit(x[x.columns[1:3]]) # Compute k-means clustering.
+x['cluster_label'] = kmeans.fit_predict(x[x.columns[1:3]])
+centers = kmeans.cluster_centers_ # Coordinates of cluster centers.
+labels = kmeans.predict(x[x.columns[1:3]]) # Labels of each point
+x.head(10)
+
+x.plot.scatter(x = 'Latitude', y = 'Longitude', c=labels, s=50, cmap='viridis')
+plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
+
+x_filtered.head(10)
+
+
+ to drop out liers in latitudes
+y.drop(y[y['Longitude']<-87.9977].index,inplace=True,axis=0)
+y.drop(y[y['Longitude']>-87.5336].index,inplace=True,axis=0)
+y.drop(y[y['Latitude']<41.5600].index,inplace=True,axis=0)
+y.drop(y[y['Latitude']>42.1860].index,inplace=True,axis=0)
+
+
+code to get sqaure of a location
+
+location(f,l)
+df = r/69        // North-south distance in degrees
+dl = df / cos(f) // East-west distance in degrees
+{(f-df,l-dl), (f+df,l-dl), (f+df,l+dl), (f-df,l+dl)} // List of vertices
+
+
+df = 10/69 = 0.145
+dl = 0.145 / cos(50 degrees) = 0.145 / 0.6428 = 0.225
+f - df = 50 - 0.145 = 49.855 (southernmost latitude)
+f + df = 50 + 0.145 = 50.145 (northernmost latitude)
+l - dl = -1 - 0.225 = -1.225 (western longitude)
+l + dl = -1 + 0.225 = -0.775 (eastern longitude)

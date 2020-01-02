@@ -1,0 +1,10 @@
+load data
+visible the data
+visbile unique values
+show dtypes
+shape of data frame
+concatenate all the csv files
+view null values
+drop null values along with row
+
+

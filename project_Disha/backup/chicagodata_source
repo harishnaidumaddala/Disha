@@ -1,0 +1,30 @@
+
+
+chicago data link :
+
+https://data.cityofchicago.org/Public-Safety/Crimes-2016/kf95-mnd6
+
+
+
+
+label encoder
+
+
+
+
+brightness_4
+# Import label encoder 
+from sklearn import preprocessing 
+  
+# label_encoder object knows how to understand word labels. 
+label_encoder = preprocessing.LabelEncoder() 
+  
+# Encode labels in column 'species'. 
+df['species']= label_encoder.fit_transform(df['species']) 
+  
+df['species'].unique() 
+
+machine learning tutorial
+	
+https://www.packtpub.com/big-data-and-business-intelligence/learning-python-data-visualization-video-0
+
